@@ -55,6 +55,19 @@ php artisan migrate
 php artisan db:seed
 ```
 
+- Set up your SMTP details in the `.env` file
+  
+  ```bash
+        MAIL_MAILER=smtp
+        MAIL_HOST=mailpit
+        MAIL_PORT=1025
+        MAIL_USERNAME=null
+        MAIL_PASSWORD=null
+        MAIL_ENCRYPTION=null
+        MAIL_FROM_ADDRESS="<hello@example.com>"
+        MAIL_FROM_NAME="${APP_NAME}"
+  ```
+
 - Start the application
 
 ```bash
@@ -113,7 +126,7 @@ mutation {
     }
 
     # this returns the user with id of 1 with its medical tests
-    
+
     user(id: 1) {
         name
         email
