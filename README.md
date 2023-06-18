@@ -82,11 +82,57 @@ POST /api/tests/store
 
 - Visit the application payground on your browser on the url `http://localhost:8000/graphiql`
 
-## Screenshots
+## GraphQl Queries
 
-![image](https://user-images.githubusercontent.com/24875416/139580544-4b0b9b9a-2b9a-4b0a-8b9a-5b0b9b9a2b9a.png)
+ This are some of the graphql queries you can run on the playground
 
-![image](https://user-images.githubusercontent.com/24875416/139580557-4b0b9b9a-2b9a-4b0a-8b9a-5b0b9b9a2b9a.png)
+```bash
+# this is the mutation
+mutation {
+    # this is the login mutation, it retunrns the bearers token
+    login(email:"peopleoperations@kompletecare.com", password:"password")
+
+    # This store Users Test in the database
+    createUserTest(labTests_id: 3) {
+        id
+        labTests {
+        name
+        category
+        }
+    }
+}
+
+# This are more queries you can run
+{
+    # this returns all the available medical Test in the database
+
+    labTests {
+        id
+        name
+        category
+    }
+
+    # this returns the user with id of 1 with its medical tests
+    
+    user(id: 1) {
+        name
+        email
+        username
+        userTests {
+            labTests {
+                name
+            }
+        }
+    }
+
+    userTests {
+        labTests {
+            name
+        } 
+    }
+}
+
+```
 
 ## License
 
