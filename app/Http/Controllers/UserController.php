@@ -17,8 +17,6 @@ class UserController extends Controller
 
     public function index()
     {
-        // $userTest = UserTest::whereUserId(Auth::user()->id)->with('xray', 'ultrasound')->get();
-
         $labTests = LabTests::all();
 
         return [

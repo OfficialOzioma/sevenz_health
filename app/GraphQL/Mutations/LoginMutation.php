@@ -19,7 +19,7 @@ final class LoginMutation
         $user = User::whereEmail($credentials['email'])->first();
 
         if (!$user || !Hash::check($credentials['password'], $user->password)) {
-            // return response()->json(['error' => 'login error, try again'], 401);
+
             return "login error, try again";
         }
 
