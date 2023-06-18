@@ -87,13 +87,11 @@
             @endphp
 
             @foreach ($mailData->user_tests as $user_test)
-                @foreach ($user_test->labTests as $key => $labTest)
-                    <tr>
-                        <td>{{ $num++ }}</td>
-                        <td>{{ $labTest->name }}</td>
-                        <td>{{ $labTest->category }}</td>
-                    </tr>
-                @endforeach
+                <tr>
+                    <td>{{ $num++ }}</td>
+                    <td>{{ $user_test->labTests->name }}</td>
+                    <td>{{ $user_test->labTests->category }}</td>
+                </tr>
             @endforeach
 
             {{-- <tr>

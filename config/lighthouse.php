@@ -43,7 +43,6 @@ return [
             // Logs every incoming GraphQL query.
             // Nuwave\Lighthouse\Http\Middleware\LogGraphQLQueries::class,
 
-            // \Nuwave\Lighthouse\Http\Middleware\AttemptAuthentication::class,
 
             \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
         ],

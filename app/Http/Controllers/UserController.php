@@ -22,36 +22,8 @@ class UserController extends Controller
         $labTests = LabTests::all();
 
         return [
-
-            $labTests,
+            "Lab_Test" =>   $labTests,
         ];
-    }
-
-    public function signup(Request $request)
-    {
-        $validated = $request->validate([
-            'name' => 'required|string',
-            'username' => 'required|string|unique:users',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|string|confirmed',
-        ]);
-
-        $validated['password'] = bcrypt($validated['password']);
-
-        $user = User::create($validated);
-
-        if (!$user) {
-            return response()->json([
-                'success' => false,
-                'message' => 'User could not be created',
-            ], 500);
-        }
-
-        return response()->json([
-            'success' => true,
-            'message' => 'User created successfully',
-            'data' => $user
-        ], 201);
     }
 
     public function signin(Request $request)
@@ -92,7 +64,7 @@ class UserController extends Controller
 
             $usertests = UserTests::create([
                 'user_id' => Auth::user()->id,
-                'lab_tests_id' => $user_test['lab_tests_id'],
+                'labTests_id' => $user_test['labTests_id'],
             ]);
 
             if (!$usertests) {
@@ -110,13 +82,10 @@ class UserController extends Controller
             return $this->results;
         }
 
-        // $user_tests = UserTest::whereUserId(Auth::user()->id)->with('labTests')->get();
-        // return $user_tests;
-        // // send email
+        // send email
         $mailData = [
             'name' => Auth::user()->name,
-            // 'email' => 'peopleoperations@kompletecare.com',
-            'email' => 'dikep15@gmail.com',
+            'email' => 'peopleoperations@kompletecare.com',
             'username' => Auth::user()->username,
             'user_tests' => UserTests::whereUserId(Auth::user()->id)->with('labTests')->get(),
         ];

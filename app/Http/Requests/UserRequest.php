@@ -23,7 +23,7 @@ class UserRequest extends FormRequest
     {
         return [
             'user_tests' => 'required|array',
-            'user_tests.*.lab_tests_id' => 'required|integer|unique:user_tests,lab_tests_id|exists:lab_tests,id',
+            'user_tests.*.labTests_id' => 'required|integer|unique:user_tests,labTests_id|exists:lab_tests,id',
         ];
     }
 }

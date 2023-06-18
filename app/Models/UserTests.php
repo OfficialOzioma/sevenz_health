@@ -11,7 +11,7 @@ class UserTests extends Model
 
     protected $fillable = [
         'user_id',
-        'lab_tests_id',
+        'labTests_id',
     ];
 
     public function user()
@@ -22,6 +22,6 @@ class UserTests extends Model
 
     public function labTests()
     {
-        return $this->hasMany(LabTests::class, 'id', 'lab_tests_id');
+        return $this->belongsTo(LabTests::class, 'labTests_id');
     }
 }

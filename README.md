@@ -14,7 +14,7 @@ A coding challenge for kompletecare backend developer position
 - Clone the repository by running the code below on your terminal
 
 ```bash
-git clone
+git clone git@github.com:OfficialOzioma/sevenz_health.git
 ```
 
 - Change directory into the project folder
@@ -76,7 +76,7 @@ POST /api/tests/store
 
 ```
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/1f0b3b3b3b3b3b3b3b3b)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://documenter.getpostman.com/view/12234489/2s93si1pnL)
 
 ## For GraphQL API Routes
 

@@ -23,7 +23,6 @@ Route::get('/login', function () {
 })->name('login');
 
 
-Route::post('/signup', [UserController::class, 'signup']);
 Route::post('/signin', [UserController::class, 'signin']);
 
 Route::middleware('auth:sanctum')->group(function () {

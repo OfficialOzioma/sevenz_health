@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('user_tests', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('lab_tests_id');
+            $table->unsignedBigInteger('labTests_id');
             $table->timestamps();
 
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('lab_tests_id')->references('id')->on('lab_tests')->onDelete('cascade');
+            $table->foreign('labTests_id')->references('id')->on('lab_tests')->onDelete('cascade');
         });
     }
 
